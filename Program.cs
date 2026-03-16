@@ -1,50 +1,50 @@
-// robo de atendimento
+// service bot
 
-int opcao;
-float saldo = 1200F;
+int option;
+float balance = 1200F;
 
-Console.WriteLine("                          Digite a Opção desejada:                                      ");
-Console.WriteLine("                          1 - Desbloqueio de Cartão                                     ");
-Console.WriteLine("                          2 - Bloqueio de Cartão                                        ");
-Console.WriteLine("                          3 - Ver saldo da conta                                        ");
-Console.WriteLine("                          4 - Fazer Transferencia                                       ");
-Console.WriteLine("                          5 - Ver extrato                                               ");
+Console.WriteLine("                          Enter the desired option:                                      ");
+Console.WriteLine("                          1 - Unlock Card                                                ");
+Console.WriteLine("                          2 - Lock Card                                                  ");
+Console.WriteLine("                          3 - Check account balance                                      ");
+Console.WriteLine("                          4 - Make a transfer                                            ");
+Console.WriteLine("                          5 - View transaction history                                   ");
 Console.WriteLine("                        ============================                                    ");
 
-opcao = int.Parse(Console.ReadLine());
+option = int.Parse(Console.ReadLine());
 
-switch(opcao)
+switch(option)
 {
     case 1:
         {
-            Console.WriteLine(" Cartão desbloqueado com sucesso! ");
+            Console.WriteLine("Card successfully unlocked!");
             break;
         }
     case 2:
         {
-            Console.WriteLine(" Cartão Bloqueado com sucesso! (para desbloquear reinicie o programa e acesse opção 1.) ");
+            Console.WriteLine("Card successfully locked! (to unlock it restart the program and choose option 1.)");
             break;
         }
     case 3:
         {
-            Console.WriteLine("O saldo da sua conta é: " + "R$" + saldo);
+            Console.WriteLine("Your account balance is: " + "$" + balance);
             break;
         }
     case 4:
         {
-            Console.WriteLine("Digite a chave PIX para realizar a transferencia: ");
-            Console.WriteLine("Este é o saldo disponivel: " + saldo);
+            Console.WriteLine("Enter the PIX key to make the transfer: ");
+            Console.WriteLine("This is the available balance: " + balance);
             break;
         }
     case 5:
         {
-            Console.WriteLine("Aqui você pode conferir seu extrato: ");
-            List <string> extrato = new List<string>();
-            extrato.Add("Transferência de 500 para João em 17/02");
-            extrato.Add("Depósito de 1.700 em 14/02");
-            extrato.Add("Saque de 100 em 12/02");
+            Console.WriteLine("Here you can check your transaction history: ");
+            List<string> statement = new List<string>();
+            statement.Add("Transfer of 500 to JoÃ£o on 02/17");
+            statement.Add("Deposit of 1700 on 02/14");
+            statement.Add("Withdrawal of 100 on 02/12");
             
-            foreach (string item in extrato)
+            foreach (string item in statement)
             {
                 Console.WriteLine(item);
             }
@@ -52,8 +52,7 @@ switch(opcao)
         }
     default:
         {
-            Console.WriteLine("Nenhuma Opção selecionada, encerrando o sistema...");
+            Console.WriteLine("No option selected, closing the system...");
             break;
         }
 }
-
